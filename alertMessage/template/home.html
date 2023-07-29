@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <h1 class="display-1 text-center">ALERT MESSAGE PROJECT</h1>
+    <div class="container-fluid bg-dark ">
+        <div class="container col-md-offset-4 col-md-4 ">
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                    <div class="alert alert-danger">
+                        {{message}}
+                    </div>
+            {% else %}
+            <div class="alert alert-{{message.tags}}">
+                {{message}}
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            <a href="{% url 'success'%}" class="btn btn-outline-success col-3">SUCCESS</a>
+            <a href="{% url 'info'%}" class="btn btn-outline-info col-3">INFO</a>
+            <a href="{% url 'warning'%}" class="btn btn-outline-warning col-3">WARNING</a>
+            <a href="{% url 'error'%}" class="btn btn-outline-danger col-3">ERROR</a>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $(".alert").hide(4000);
+        });
+    </script>
+</body>
+
+</html>
