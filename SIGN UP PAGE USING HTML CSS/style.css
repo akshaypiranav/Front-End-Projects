@@ -1,0 +1,51 @@
+
+.formclass{
+    width: 300px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgba(0, 0, 0, .5) ;
+    display: block;
+    margin: 150px auto;
+    color: white;
+    padding:10px 20px 30px;
+    border-radius: 10px;
+
+}
+
+h3{
+    color:rgb(123, 0, 6);
+    text-align: center;
+}
+.input input{
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+    border: 2px solid black;
+    margin: 5px auto 5px;
+    padding:5px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.radio{
+    display: inline;
+}
+input:focus{
+    background-color: rgb(213, 208, 208);
+}
+button{
+    margin-top: 10px;
+    font-size: 22px;
+    background-color: rgb(7, 147, 100);
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px gray;
+}
+.btn{
+    text-align: center;
+}
+.radio input{
+    accent-color: rgb(7, 147, 100);
+    transform: scale(1.5em);
+}
+body{
+    overflow: hidden;
+}
