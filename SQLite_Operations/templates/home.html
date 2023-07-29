@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<body>
+    
+    {% block content %}
+            <div class="logformclass">
+                
+                <form action="addDetails" method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    <h3>LOGIN PAGE</h3>
+                    <div class="input">
+                        <label for="name">USERNAME</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="input">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <div class="btn">
+                        <button type="submit">LOG IN</button>
+        
+                    </div>
+        </form>
+
+    </div>
+    <div id="result">
+        {% if data %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.NO</th>
+                        <th>USERNAME</th>
+                        <th>PASSWORD</th>
+                        <th>UPDATE</th>
+                        <th>DELETE</th>
+                    </tr>
+                    
+                </thead>
+                
+                {% endif %}
+                {% for i in data %}
+                <tbody>
+                    
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.UserName}}</td>
+                    <td>{{i.Password}}</td>
+                    <td><a href="updateData/{{i.id}}">update</a></td>
+                    <td><a href="deleteData/{{i.id}}">delete</a></td>
+                </tbody>
+                {% endfor %}
+            </table>
+    </div>
+    {% endblock %}
+</body>
+</html>
