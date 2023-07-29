@@ -1,0 +1,20 @@
+
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="container col-md-offset-5 col-md-4 bg-dark text-light text-center well" style="margin-top: 70px;">
+    <br><h1>REGISTRATION</h1><br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        <input type="text" name="username" class="form-control" placeholder="USERNAME"><br>
+        <input type="email" name="email" class="form-control" placeholder="EMAIL"><br>
+        <input type="password" name="password" class="form-control" placeholder="PASSWORD"><br>
+        <input type="password" name="confirm" class="form-control" placeholder="CONFIRM PASSWORD"><br>
+        <input type="submit" value="REGISTER" class="btn btn-success"><hr>
+
+    </form>
+
+</div>
+{% endblock %}
