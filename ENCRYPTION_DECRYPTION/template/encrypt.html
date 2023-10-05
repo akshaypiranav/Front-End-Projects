@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCRYPT</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div class="container text-center text-light bg-dark col-6 cd-xs-6 cd-md-6 rounded" style="margin-top: 200px;">
+        <form action="/encryption"  method="POST" autocapitalize="off" autocomplete="off" >
+            {% csrf_token %}
+        <blockquote style="visibility: hidden;">aa</blockquote>
+        <h1 class="display4">PASTE THE URL BELOW</h1><br>
+        <input type="text" name="url" id="url" class="form form-control" placeholder="PASTE THE URL" ><br>
+        <input type="text" name="shift" id="shift" value="3" placeholder="ENTER THE SHIFT VALUE" class="form form-control"> <br>
+        {% if data %}
+        <p>Copy the URL : {{ data }}</p>
+{% endif %}
+        <button class="btn btn-success w-100">ENCRYPT URL</button>
+        <blockquote style="visibility: hidden;">aa</blockquote>
+    </form>
+    </div>
+    
+</body>
+</html>
